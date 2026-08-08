@@ -1,0 +1,70 @@
+                         ┌───────────────┐
+                         │    START      │
+                         └───────┬───────┘
+                                 │
+                                 ▼
+                    ┌────────────────────────┐
+                    │ Open accounts.bin      │
+                    └───────────┬────────────┘
+                                │
+                                ▼
+                       ╔════════════════╗
+                       ║ File Exists?   ║
+                       ╚═══════╤════════╝
+                           NO   │   YES
+                          ┌─────┘   └──────┐
+                          ▼                ▼
+                   Create Database    Use Database
+                          │                │
+                          └───────┬────────┘
+                                  ▼
+                         ┌────────────────┐
+                         │  LOGIN PORTAL  │
+                         └───────┬────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    ▼                         ▼
+             ┌─────────────┐           ┌─────────────┐
+             │Create       │           │Login        │
+             │Account      │           │             │
+             └──────┬──────┘           └──────┬──────┘
+                    │                         │
+                    ▼                         ▼
+             Check Duplicate          Search accounts.bin
+                    │                         │
+                    ▼                         ▼
+             Enter Details             Match Account?
+                    │                    /          \
+                    ▼                  NO            YES
+             Confirm PIN                │             │
+                    │                   ▼             ▼
+                    ▼              Invalid Login   Dashboard
+             Append to File                         │
+                                                    ▼
+                                            ┌──────────────┐
+                                            │ Main Menu    │
+                                            └──────┬───────┘
+                                                   │
+                     ┌────────────┬────────────┬───┴───────────┐
+                     ▼            ▼            ▼               ▼
+                 Balance       Deposit     Withdraw        Change PIN
+                     │            │            │               │
+                     └────────────┴────────────┴───────────────┘
+                                                   │
+                                                   ▼
+                                          Another Transaction?
+                                             /            \
+                                           YES             NO
+                                            │               │
+                                            ▼               ▼
+                                        Main Menu       fseek()
+                                                            │
+                                                            ▼
+                                                         fwrite()
+                                                            │
+                                                            ▼
+                                                         fclose()
+                                                            │
+                                                            ▼
+                                                           END
+                                                           
