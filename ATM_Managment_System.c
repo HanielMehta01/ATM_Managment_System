@@ -89,7 +89,7 @@ int main()
             }
         } while (accountExists == 1);
         printf("Account Holder Name = ");
-        scanf("%s", obj.Account_Holder_Name);
+        scanf(" %49[^\n]", obj.Account_Holder_Name);
         printf("PIN (Should be of more than 1 digit)= ");
         scanf("%d", &obj.Pin);
         while (obj.Pin != Temp_Pin)
@@ -105,7 +105,7 @@ int main()
                 printf("PIN number doesnt match the number you have entered. Please try again. \n");
             }
         }
-        fptr = fopen("accounts.bin", "wb");
+        fptr = fopen("accounts.bin", "ab");
         fwrite(&obj, sizeof(UserAccount), 1, fptr); // Same meaning as above used to store the new account details to remember the details the next the user logs in.
         fclose(fptr);
     }
